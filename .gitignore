@@ -209,3 +209,4 @@ __marimo__/
 !data/deps/example-dependency-tree.json
 !data/deps-analysis/example-dependencies.txt
 data/
+output/
