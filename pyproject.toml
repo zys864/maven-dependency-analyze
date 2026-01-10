@@ -1,0 +1,7 @@
+[project]
+name = "maven-dependency-analyze"
+version = "0.1.0"
+description = "java maven repository dependency analyze"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
