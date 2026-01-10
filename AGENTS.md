@@ -9,6 +9,7 @@ Python tool for analyzing Maven dependency trees from Java repositories. Process
 - Python 3.13+ (specified in `.python-version`)
 - Uses `uv` for package management (not pip/poetry/pipenv)
 - Core dependencies: pydantic, polars, xlsxwriter, click, rich
+- use `uv` run python commond
 
 ## Commands
 ```bash
