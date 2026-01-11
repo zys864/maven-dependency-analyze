@@ -19,9 +19,35 @@
 4. **依赖冲突检测**：识别潜在的依赖冲突
 5. **导出功能**：导出分析结果为不同格式
 
-## 2. 系统架构
+## 2. 开发环境配置
 
-### 2.1 高层架构
+本项目采用现代前端技术栈，包括 Node.js、pnpm 和 Vite，提供高效的开发体验和快速的构建能力。
+
+### 2.1 环境要求
+
+- **Node.js**: v18.x 或更高版本
+- **pnpm**: v8.x 或更高版本 (推荐使用 pnpm 进行包管理)
+- **Vite**: v5.x (用于开发服务器和构建工具)
+
+### 2.2 项目初始化
+
+```bash
+# 安装依赖
+pnpm install
+
+# 启动开发服务器
+pnpm dev
+
+# 构建生产版本
+pnpm build
+
+# 运行测试
+pnpm test
+```
+
+## 3. 系统架构
+
+### 3.1 高层架构
 ```mermaid
 graph TD
     A[用户上传] --> B[依赖树JSON文件]
@@ -37,14 +63,14 @@ graph TD
     G --> K[Analysis Report]
 ```
 
-### 2.2 前端技术架构
+### 3.2 前端技术架构
 完整的前端架构详图请参见 [frontend-architecture.md](frontend-architecture.md) 文件，其中包含了：
 - React组件层级结构
 - 状态管理方案
 - 数据流处理
 - UI组件设计
 
-## 3. 数据格式规范
+## 4. 数据格式规范
 
 ### 3.1 依赖树JSON格式
 
@@ -131,6 +157,10 @@ graph TD
 
 ### 6.1 前端技术栈
 
+- **Node.js**: 作为JavaScript运行时环境
+- **Vite**: 现代化的前端构建工具，提供快速的开发服务器和优化的构建过程
+- **SWC**: 用于加速TypeScript和JavaScript编译的超快编译器
+- **pnpm**: 高效的包管理器，节省磁盘空间并提升安装速度
 - **React**: 用于构建用户界面的JavaScript库
 - **TypeScript**: 为JavaScript添加静态类型检查
 - **Tailwind CSS**: 实用优先的CSS框架，用于快速UI开发
@@ -209,6 +239,8 @@ interface ConflictReport {
 ### 6.4 文件结构
 
 ```
+public/
+└── index.html               # HTML模板
 src/
 ├── components/              # React组件
 │   ├── FileUploader/        # 文件上传组件
@@ -230,10 +262,43 @@ src/
 ├── contexts/                # React Contexts
 │   └── DependencyContext.ts # 依赖数据上下文
 ├── App.tsx                  # 主应用组件
-└── main.tsx                 # 应用入口
+└── main.ts                  # 应用入口
+package.json                 # 项目配置和依赖
+pnpm-lock.yaml               # pnpm依赖锁定文件
+tsconfig.json                # TypeScript配置
+vite.config.ts               # Vite构建配置
+.swcrc                       # SWC编译器配置
+tailwind.config.js           # Tailwind CSS配置
 ```
 
-## 7. 数据流
+## 7. 构建与部署
+
+本项目使用 Vite 进行构建和开发，集成 SWC 编译器以加速TypeScript和JavaScript的编译过程，利用 pnpm 进行依赖管理。
+
+### 7.1 开发环境
+
+```bash
+# 安装依赖
+pnpm install
+
+# 启动开发服务器
+pnpm dev
+
+# 构建生产版本
+pnpm build
+
+# 预览生产构建
+pnpm preview
+
+# 运行测试
+pnpm test
+```
+
+### 7.2 生产构建
+
+构建后的文件位于 `dist/` 目录，可以直接部署到任何静态文件服务器上。
+
+## 9. 数据流
 
 1. **输入阶段**：用户上传JSON和TXT文件
 2. **解析阶段**：前端解析器将文件转换为内部数据结构
@@ -241,39 +306,39 @@ src/
 4. **渲染阶段**：React组件根据数据渲染UI
 5. **交互阶段**：用户与界面交互，触发状态更新
 
-## 8. 非功能性需求
+## 10. 非功能性需求
 
-### 8.1 性能要求
+### 10.1 性能要求
 - 能够处理大型项目的依赖树（数千个依赖项）
 - 快速加载和解析大型JSON文件
 - 流畅的UI交互体验
 
-### 8.2 可访问性
+### 10.2 可访问性
 - 支持键盘导航
 - 符合WCAG标准
 - 支持屏幕阅读器
 
-### 8.3 响应式设计
+### 10.3 响应式设计
 - 适配桌面和移动设备
 - 不同屏幕尺寸下的布局调整
 - 触摸友好的交互设计
 
-## 9. UI/UX 设计
+## 11. UI/UX 设计
 
-### 9.1 设计原则
+### 11.1 设计原则
 - 简洁明了的界面设计
 - 清晰的视觉层次
 - 一致的交互模式
 - 使用Tailwind CSS实现响应式布局
 
-### 9.2 颜色方案
+### 11.2 颜色方案
 - 主色调：蓝色系（用于主要操作和链接）
 - 成功色：绿色系（用于正常状态）
 - 警告色：黄色/橙色系（用于警告状态）
 - 错误色：红色系（用于错误状态）
 - 中性色：灰度系（用于背景和文本）
 
-### 9.3 组件设计
+### 11.3 组件设计
 - 使用Tailwind CSS的实用优先类构建组件
 - 设计可复用的UI组件
 - 确保一致的间距和排版
