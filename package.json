@@ -1,47 +1,5 @@
 {
-  "name": "maven-dependency-analyze",
-  "version": "1.0.0",
-  "description": "Java Maven dependency tree analysis tool",
-  "main": "index.tsx",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "format": "prettier --write .",
-    "type-check": "tsc --noEmit"
-  },
-  "keywords": [
-    "maven",
-    "dependency",
-    "analysis",
-    "java",
-    "react",
-    "tailwind"
-  ],
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
-    "shadcn": "^3.6.3",
-    "@types/react": "^19.2.8",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^9.39.2",
-    "eslint-config-react-app": "^7.0.1",
-    "postcss": "^8.4.24",
-    "prettier": "^3.0.0",
-    "tailwindcss": "^4.1.18",
-    "typescript": "^5.0.2",
-    "vite": "^7.3.1",
-    "vite-plugin-pwa": "^1.2.0"
-  },
-  "dependencies": {
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "react-router-dom": "^7.12.0",
-    "framer-motion": "^12.25.0",
-    "lucide-react": "^0.562.0"
+    "shadcn": "^3.6.3"
   }
 }
